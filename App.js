@@ -8,7 +8,10 @@
 
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {
+  SafeAreaProvider,
+  initialWindowMetrics,
+} from 'react-native-safe-area-context';
 import {StatusBar} from 'react-native';
 import Main from './Main';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -27,7 +30,7 @@ const MyTheme = {
 
 const App = () => {
   return (
-    <SafeAreaProvider>
+    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
       <StatusBar barStyle={'light-content'} />
       <NavigationContainer theme={MyTheme}>
         <Stack.Navigator
