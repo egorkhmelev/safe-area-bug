@@ -8,13 +8,14 @@
 
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SafeAreaView, useSafeAreaInsets} from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Main = () => {
-  const insets = useSafeAreaInsets();
   return (
     <View style={styles.container}>
-      <View style={[styles.topView, {marginTop: insets.top + 50}]} />
+      <SafeAreaView edges={['top']} style={{marginTop: 50}}>
+        <View style={styles.topView} />
+      </SafeAreaView>
       <SafeAreaView edges={['bottom']}>
         <View style={styles.bottomView} />
       </SafeAreaView>
